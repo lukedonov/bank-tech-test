@@ -10,6 +10,10 @@ describe("Bank", function(){
     expect(bank.balance).toEqual(0)
   })
 
+  it("has no transactions by default", function() {
+    expect(bank.transactions).toEqual([])
+  })
+
   it("balance increases when deposit is made", function() {
     bank.deposit(200)
     expect(bank.balance).toEqual(200)
