@@ -9,3 +9,7 @@ Bank.prototype.deposit = function(amount) {
 Bank.prototype.withdraw = function(amount) {
   this.balance -= amount
 }
+
+Bank.prototype.showBalance = function(amount) {
+  return this.balance
+}

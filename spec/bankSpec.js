@@ -21,6 +21,9 @@ describe("Bank", function(){
     expect(bank.balance).toEqual(150)
   })
 
-
+  it("returns bank balance", function() {
+    bank.deposit(200)
+    expect(bank.showBalance()).toEqual(200)
+  })
 
 });
