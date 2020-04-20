@@ -10,6 +10,6 @@ Bank.prototype.withdraw = function(amount) {
   this.balance -= amount
 }
 
-Bank.prototype.showBalance = function(amount) {
-  return this.balance
+Bank.prototype.returnBankStatement = function(amount) {
+  return "date || credit || debit || balance"
 }

@@ -21,9 +21,9 @@ describe("Bank", function(){
     expect(bank.balance).toEqual(150)
   })
 
-  it("returns bank balance", function() {
-    bank.deposit(200)
-    expect(bank.showBalance()).toEqual(200)
+  it("returns bank statement", function() {
+    expect(bank.returnBankStatement()).toEqual("date || credit || debit || balance")
   })
 
+  console.log(Date.now())
 });
