@@ -30,5 +30,10 @@ describe("Bank", function(){
     expect(bank.returnBankStatement()).toEqual("date || credit || debit || balance\n20/04/20 || 400 || || 400")
   })
 
+  it("returns bank statement", function() {
+    bank.deposit(300)
+    expect(bank.returnBankStatement()).toEqual("date || credit || debit || balance\n20/04/20 || 300 || || 300")
+  })
+
   console.log(Date.now())
 });

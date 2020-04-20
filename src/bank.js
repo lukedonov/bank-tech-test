@@ -14,6 +14,6 @@ Bank.prototype.returnBankStatement = function() {
   if(this.balance === 0) {
     return "date || credit || debit || balance"
   } else {
-    return "date || credit || debit || balance\n20/04/20 || 400 || || 400"
+    return `date || credit || debit || balance\n20/04/20 || ${this.balance} || || ${this.balance}`
   } 
 }
