@@ -27,13 +27,17 @@ describe("Bank", function(){
 
   it("returns bank statement", function() {
     bank.deposit(400)
-    expect(bank.returnBankStatement()).toEqual("date || credit || debit || balance\n20/04/20 || 400 || || 400")
+    expect(bank.returnBankStatement()).toEqual("date || credit || debit || balance\n20/04/2020 || 400 || || 400")
   })
 
   it("returns bank statement", function() {
     bank.deposit(300)
-    expect(bank.returnBankStatement()).toEqual("date || credit || debit || balance\n20/04/20 || 300 || || 300")
+    expect(bank.returnBankStatement()).toEqual("date || credit || debit || balance\n20/04/2020 || 300 || || 300")
   })
 
-  console.log(Date.now())
+  it("returns bank statement", function() {
+    bank.deposit(300)
+    bank.withdraw(100)
+    expect(bank.returnBankStatement()).toEqual("date || credit || debit || balance\n20/04/2020 || 300 || || 300\n20/04/2020 || || 100 || 200")
+  })
 });
