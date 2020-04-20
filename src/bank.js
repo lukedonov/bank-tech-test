@@ -1,6 +1,6 @@
 function Bank(){
   this.balance = 0;
-  this.transactions = [];
+  this.transactions = new Array();
 }
 
 Bank.prototype.deposit = function(amount) {

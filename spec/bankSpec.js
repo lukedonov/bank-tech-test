@@ -1,19 +1,21 @@
 describe("Bank", function(){ 
 
   var bank;
+  var date;
 
   beforeEach(function(){
     bank = new Bank();
+    date = new Date("25/12/2019")
   })
-
+  
   it("has a balance of 0 by default", function() {
     expect(bank.balance).toEqual(0)
   })
-
+  
   it("has no transactions by default", function() {
     expect(bank.transactions).toEqual([])
   })
-
+  
   it("balance increases when deposit is made", function() {
     bank.deposit(200)
     expect(bank.balance).toEqual(200)
