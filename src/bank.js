@@ -16,17 +16,20 @@ Bank.prototype.withdraw = function(amount) {
 }
 
 Bank.prototype.returnBankStatement = function() {
-  str = "date || credit || debit || balance"
+  statement = "date || credit || debit || balance"
+
   for(i = 0; i < this.transactions.length; i++) {
-    if(this.transactions[i][0] === "deposit"){
-      str += `\n${this.transactions[i][2]} || ${this.transactions[i][1]} || || ${this.transactions[i][3]}`
+    var transaction = this.transactions[i]
+
+    if(transaction[0] === "deposit"){
+      statement += `\n${transaction[2]} || ${transaction[1]} || || ${transaction[3]}`
     }
 
-    if(this.transactions[i][0] === "withdraw") {
-      str += `\n${this.transactions[i][2]} || || ${this.transactions[i][1]} || ${this.transactions[i][3]}`
+    if(transaction[0] === "withdraw") {
+      statement += `\n${transaction[2]} || || ${transaction[1]} || ${transaction[3]}`
     }
   }
-  return str
+  return statement
 }
 
 Bank.prototype._getTodaysDate = function() {

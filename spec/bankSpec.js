@@ -40,4 +40,12 @@ describe("Bank", function(){
     bank.withdraw(100)
     expect(bank.returnBankStatement()).toEqual("date || credit || debit || balance\n20/04/2020 || 300 || || 300\n20/04/2020 || || 100 || 200")
   })
+
+  it("returns bank statement", function() {
+    bank.deposit(300)
+    bank.deposit(500)
+    bank.withdraw(200)
+    bank.withdraw(100)
+    expect(bank.returnBankStatement()).toEqual("date || credit || debit || balance\n20/04/2020 || 300 || || 300\n20/04/2020 || 500 || || 800\n20/04/2020 || || 200 || 600\n20/04/2020 || || 100 || 500")
+  })
 });
