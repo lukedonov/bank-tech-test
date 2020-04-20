@@ -17,6 +17,7 @@ Bank.prototype.withdraw = function(amount) {
 
 Bank.prototype.returnBankStatement = function() {
   statement = "date || credit || debit || balance"
+  this.transactions.reverse()
 
   for(i = 0; i < this.transactions.length; i++) {
     var transaction = this.transactions[i]
