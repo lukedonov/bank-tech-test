@@ -9,7 +9,7 @@ This is an Bank statement application that can track a user's deposits, withdraw
 
 ## Usage
 
-`Open up chrome dev tools in the spec runner and use bank.deposit(n), bank.withdraw(n) or bank.returnBankStatement()`
+`This application can be used from the javascript console`
 
 
 
