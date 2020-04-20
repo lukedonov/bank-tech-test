@@ -15,6 +15,12 @@ describe("Bank", function(){
     expect(bank.balance).toEqual(200)
   })
 
+  it("balance decreases when a withdrawal is made", function() {
+    bank.deposit(200)
+    bank.withdraw(50)
+    expect(bank.balance).toEqual(150)
+  })
+
 
 
 });
