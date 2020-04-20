@@ -10,9 +10,13 @@ Bank.prototype.deposit = function(amount) {
 }
 
 Bank.prototype.withdraw = function(amount) {
-  var withdrawal = ["withdraw",amount, this._getTodaysDate(), (this.balance - amount)]
-  this.transactions.push(withdrawal)
-  this.balance -= amount
+  if(amount > this.balance) {
+    throw new Error("Insufficient funds")
+  } else {
+    var withdrawal = ["withdraw",amount, this._getTodaysDate(), (this.balance - amount)]
+    this.transactions.push(withdrawal)
+    this.balance -= amount
+  }
 }
 
 Bank.prototype.returnBankStatement = function() {

@@ -48,4 +48,8 @@ describe("Bank", function(){
     bank.withdraw(100)
     expect(bank.returnBankStatement()).toEqual("date || credit || debit || balance\n20/04/2020 || || 100 || 500\n20/04/2020 || || 200 || 600\n20/04/2020 || 500 || || 800\n20/04/2020 || 300 || || 300")
   })
+
+  it("cannot withdraw if the balance is 0", function() {
+    expect(function() {bank.withdraw(50)}).toThrowError("Insufficient funds")
+  })
 });
