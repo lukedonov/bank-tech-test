@@ -4,15 +4,15 @@ This is an Bank statement application that can track a user's deposits, withdraw
 
 ## Getting started
 
-`git clone path-to-your-repo`
-`command_to_install_dependencies` (e.g. `bundle`)
+`git clone https://github.com/lukedonov/bank-tech-test.git`
+<!-- `command_to_install_dependencies` (e.g. `bundle`) -->
 
 ## Usage
 
-`command_to_start` (e.g. `rackup` or `rails s`)
-Navigate to `http://localhost:4567/`
+`Open up chrome dev tools in the spec runner and use bank.deposit(n), bank.withdraw(n) or bank.returnBankStatement()`
+
 
 
 ## Running tests
 
-`test_command` (e.g. `rspec`)
+`My tests are written in Jasmine, to run the tests copy path for the spec runner into your browser.`

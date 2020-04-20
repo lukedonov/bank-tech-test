@@ -48,3 +48,5 @@ Bank.prototype._getTodaysDate = function() {
   } 
   return dd+'/'+mm+'/'+yyyy;
 }
+
+bank = new Bank()
