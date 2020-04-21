@@ -1,22 +1,36 @@
 function Bank(){
-  this.balance = 0;
   this.transactions = new Array();
 }
 
 Bank.prototype.deposit = function(amount) {
-  var deposit = [ "deposit", (amount).toFixed(2), this._getTodaysDate(), (this.balance + amount).toFixed(2)];
-  this.transactions.push(deposit);
-  this.balance += amount;
+  this.transactions.push(new Transaction('deposit',amount,this._getTodaysDate()));
 };
 
 Bank.prototype.withdraw = function(amount) {
-  if(amount > this.balance) {
-    throw new Error("Insufficient funds");
-  } else {
-    var withdrawal = [ "withdraw", (amount).toFixed(2), this._getTodaysDate(), (this.balance - amount).toFixed(2) ];
-    this.transactions.push(withdrawal);
-    this.balance -= amount;
+  this.transactions.push(new Transaction("withdrawal",amount,this._getTodaysDate()));
+};
+
+Bank.prototype.returnBankStatement = function() {
+  var statement = "date || credit || debit || balance\n";
+  var history = []
+  var balance = 0
+  
+  for(var i = 0; i < this.transactions.length; i++) {
+    var transaction = this.transactions[i];
+    
+    if(transaction.type === "deposit" ) {
+      history.push(`${transaction.date} || ${(transaction.amount).toFixed(2)} || || ${(balance += transaction.amount).toFixed(2)}`);
+    }
+    
+    if(transaction.type === "withdrawal") {
+      history.push(`${transaction.date} || || ${(transaction.amount).toFixed(2)} || ${(balance -= transaction.amount).toFixed(2)}`);
+    }
   }
+  return statement + history.reverse().join("\n");
+};
+
+Bank.prototype._reverseNumberSign = function(i) {
+  return i - (i * 2);
 };
 
 Bank.prototype._getTodaysDate = function() {
@@ -33,22 +47,4 @@ Bank.prototype._getTodaysDate = function() {
     mm='0'+mm;
   } 
   return dd+'/'+mm+'/'+yyyy;
-};
-
-Bank.prototype.returnBankStatement = function() {
-  var statement = "date || credit || debit || balance";
-  this.transactions.reverse();
-
-  for(var i = 0; i < this.transactions.length; i++) {
-    var transaction = this.transactions[i];
-
-    if(transaction[0] === "deposit"){
-      statement += `\n${transaction[2]} || ${transaction[1]} || || ${transaction[3]}`;
-    }
-
-    if(transaction[0] === "withdraw") {
-      statement += `\n${transaction[2]} || || ${transaction[1]} || ${transaction[3]}`;
-    }
-  }
-  return statement;
 };
