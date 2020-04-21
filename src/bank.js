@@ -4,16 +4,18 @@ function Bank(){
 }
 
 Bank.prototype.deposit = function(amount) {
-  var deposit = ["deposit",amount, this._getTodaysDate(), (this.balance + amount)];
+  this.amount = Number(amount).toFixed(2)
+  var deposit = ["deposit",this.amount, this._getTodaysDate(), Number(this.balance + amount).toFixed(2)];
   this.transactions.push(deposit);
   this.balance += amount;
 };
 
 Bank.prototype.withdraw = function(amount) {
+  this.amount = Number(amount).toFixed(2)
   if(amount > this.balance) {
     throw new Error("Insufficient funds");
   } else {
-    var withdrawal = ["withdraw",amount, this._getTodaysDate(), this.balance - amount];
+    var withdrawal = ["withdraw",this.amount, this._getTodaysDate(), Number(this.balance - amount).toFixed(2)];
     this.transactions.push(withdrawal);
     this.balance -= amount;
   }
