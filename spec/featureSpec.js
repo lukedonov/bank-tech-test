@@ -1,10 +1,11 @@
 describe("Bank", function() {
 
   var bank;
+  // var transaction;
 
   beforeEach(function() {
     bank = new Bank();
-    spyOn(bank, '_getTodaysDate').and.returnValue('21/04/2020')
+    spyOn(bank, '_getTodaysDate').and.returnValue('21/04/2020');
   })
   
   it("returns an empty bank statement", function() {
