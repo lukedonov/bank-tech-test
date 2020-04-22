@@ -7,12 +7,12 @@ Bank.prototype.deposit = function(amount) {
 };
 
 Bank.prototype.withdraw = function(amount) {
-  this.transactions.push(new Transaction("withdrawal",amount,this._getTodaysDate()));
+  this.transactions.push(new Transaction('withdrawal',amount,this._getTodaysDate()));
 };
 
 Bank.prototype.returnBankStatement = function() {
-  statement = new Statement(this.transactions)
-  return statement.generateStatement()
+  statement = new Statement(this.transactions);
+  return statement.generateStatement();
 };
 
 Bank.prototype._getTodaysDate = function() {

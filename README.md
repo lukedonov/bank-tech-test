@@ -2,7 +2,6 @@
 
 This is an Bank statement application that can track a user's deposits, withdrawals and balance. 
 
-
 ## Getting started
 
 `git clone https://github.com/lukedonov/bank-tech-test.git`
@@ -10,8 +9,6 @@ This is an Bank statement application that can track a user's deposits, withdraw
 ## Usage
 
 `This application can be used from the javascript console`
-
-
 
 ## Running tests
 

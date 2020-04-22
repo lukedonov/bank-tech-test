@@ -4,8 +4,9 @@ describe("Bank", function() {
 
   beforeEach(function() {
     bank = new Bank();
+    spyOn(bank, '_getTodaysDate').and.returnValue('21/04/2020')
   })
-
+  
   it("returns an empty bank statement", function() {
     expect(bank.returnBankStatement()).toEqual("date || credit || debit || balance\n");
   });
