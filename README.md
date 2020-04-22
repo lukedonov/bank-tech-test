@@ -6,8 +6,8 @@
 
 |Input    |Output|
 |------|-------|
-|deposit(1000)| `date || credit || debit || balance`<br>`10/01/2012|| 1000.00 || || 1000.00`
-|deposit(1000)<br>withdraw(500)| `date || credit || debit || balance`<br>`10/01/2012|| || 500 || 500.00`<br>`10/01/2012|| 1000.00 || || 1000.00`
+|deposit(1000)| `date || credit || debit || balance``10/01/2012|| 1000.00 || || 1000.00`
+|deposit(1000)<br>withdraw(500)| `date || credit || debit || balance``10/01/2012|| || 500 || 500.00``10/01/2012|| 1000.00 || || 1000.00`
 
 ## My approach
 
